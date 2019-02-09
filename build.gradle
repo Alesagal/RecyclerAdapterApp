@@ -23,9 +23,12 @@ allprojects {
         google()
         jcenter()
 
-        maven {
-            url  "https://dl.bintray.com/alesagal/RecyclerAdapter"
-        }
+    }
+}
+
+subprojects {
+    tasks.withType(Javadoc).all {
+        enabled = false
     }
 }
 

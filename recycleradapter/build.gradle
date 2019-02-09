@@ -15,7 +15,7 @@ ext {
     siteUrl = 'https://github.com/Alesagal/RecyclerAdapterApp'
     gitUrl = 'https://github.com/Alesagal/RecyclerAdapterApp.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.1'
 
     developerId = 'Alesagal'
     developerName = ''
@@ -64,12 +64,6 @@ dependencies {
 }
 repositories {
     mavenCentral()
-}
-
-projects {
-    tasks.withType(Javadoc).all {
-        enabled = false
-    }
 }
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'

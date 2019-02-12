@@ -1,8 +1,10 @@
 Android library to create Adapters for RecyclerViews without adding new files to the project.
 
-## Instalation
+## Installation
 
+```groovy
 implementation 'es.alesagal:recycleradapter:1.0.1'
+```
 
 
 ## Example

@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
                 viewHolder.lblText.text = mList[position]
 
                 viewHolder.view.setOnClickListener {
+                    // If you want to insert only one item.
                     mList.add(position.toString())
                     notifyItemInserted(mList.size - 1)
                 }
@@ -37,8 +38,11 @@ class MainActivity : AppCompatActivity() {
             addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
             layoutManager = LinearLayoutManager(context)
             adapter = mAdapter
-
         }
+
+        // If you want to update the whole list.
+        mList = ArrayList(listOf("one", "two", "three", "four"))
+        mAdapter.setData(mList)
     }
 
     class ViewHolderImpl(val view: View) : RecyclerView.ViewHolder(view) {

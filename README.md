@@ -3,7 +3,7 @@ Android library to create Adapters for RecyclerViews without adding new files to
 ## Installation
 
 ```groovy
-implementation 'es.alesagal:recycleradapter:1.0.1'
+implementation 'es.alesagal:recycleradapter:1.1.0'
 ```
 
 
@@ -17,11 +17,16 @@ mAdapter = object : RecyclerAdapter<ViewHolderImpl>(mList, R.layout.row, ViewHol
         viewHolder.lblText.text = mList[position]
     
         viewHolder.view.setOnClickListener {
+            // If you want to insert only one item.
             mList.add(position.toString())
             notifyItemInserted(mList.size - 1)
         }
     }
 }
+
+// If you want to update the whole list.
+        mList = ArrayList(listOf("one", "two", "three", "four"))
+        mAdapter.setData(mList)
 ```
 
 

@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 
 abstract class RecyclerAdapter<VH : RecyclerView.ViewHolder>(
-    private val mData: Collection<*>,
+    private var mData: Collection<*>,
     private val layoutId: Int,
     private val viewHolderClass: Class<out RecyclerView.ViewHolder>
 ) : RecyclerView.Adapter<VH>() {
@@ -16,4 +16,9 @@ abstract class RecyclerAdapter<VH : RecyclerView.ViewHolder>(
     }
 
     override fun getItemCount() = mData.size
+
+    fun setData(data: Collection<*>) {
+        mData = data
+        notifyDataSetChanged()
+    }
 }
